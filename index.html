@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | NFT preview card component</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+    /* START GLOBAL */
+  *{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    }
+  :root {
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --main-bg:  hsl(217, 54%, 11%);
+  --card-bg:  hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+/* END GLOBAL */
+/* |||||||||||||||||||||||||||||||||||| */
+/* START BODY  */
+body {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  background:linear-gradient(#762d5b , #0d192b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+  height: calc(100vh - 1px);
+}
+/* END BODY  */
+/* |||||||||||||||||||||||||||||||||||| */
+/* START CONTAINER  */
+.container {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 50px;
+}
+/* END CONTAINER  */
+/* |||||||||||||||||||||||||||||||||||| */
+/* START IMAGE  */
+.container .main-image {
+  position: relative;
+}
+.container .main-image img {
+  max-width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+.container .main-image div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(178, 100%, 50%, 50%);
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: .5s ease-out;
+  cursor: pointer;
+}
+.container .main-image div:hover {
+  opacity: 1;
+}
+@media (min-width: 375px) {
+  .container {
+    width: 350px;
+  }
+}
+/* END IMAGE  */
+/* |||||||||||||||||||||||||||||||||||| */
+/* START H1  */
+.container h1 {
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-size: 1.5em;
+  transition: ease-out .4s;
+  cursor: pointer;
+}
+.container h1:hover {
+  color: var(--Cyan);
+}
+/* END H1  */
+/* |||||||||||||||||||||||||||||||||||| */
+/* START PARAGRAPH */
+.container p {
+  color: var(--Soft-blue);
+  margin-bottom: 1rem;
+}
+/* END PARAGRAPH */
+/* START TIME  */
+.time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+.container .time .one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .time .one p {
+  color: var(--Cyan);
+  font-weight: 600;
+}
+.container .time .two {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .time p {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+/* END TIME  */
+/* |||||||||||||||||||||||||||||||||||| */
+/* START HR  */
+hr {
+  background-color: var(--line);
+  border: none;
+  height: 1px;
+  margin-bottom: 1.25rem;
+}
+/* END HR  */
+/* |||||||||||||||||||||||||||||||||||| */
+/* START FOOTER  */
+.container .footer {
+  display: flex;
+  justify-content: space-around;
+}
+.container .footer img {
+  width: 50px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  margin-left: -40px;
+  cursor: pointer;
+}
+.container .footer p {
+  margin-left: -70px;
+  margin-top: 15px;
+}
+.container .footer p span {
+  color: var(--white);
+  transition: 0.4s ease-out;
+  cursor: pointer;
+}
+.container .footer p span:hover {
+  color: var(--Cyan);
+}
+/* END FOOTER  */
+/* |||||||||||||||||||||||||||||||||||| */
+/* START ATTRIBUTION */
+.attribution {
+  color: var(--white);
+  margin-top: 60px;
+}
+.attribution a {
+  text-transform: none;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 5px;
+  color: blue;
+  text-shadow: 0 0 15px;
+  transition: 0.6s ease-out;
+}
+.attribution a:hover {
+  background: var(--Cyan);
+  color: var(--white);
+}
+/* END ATTRIBUTION */
+/* |||||||||||||||||||||||||||||||||||| */
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="main-image">
+      <img src="/images/image-equilibrium.jpg" alt="">
+      <div><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h48v48H0z"/><path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15Zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10Zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6Z" fill="#FFF" fill-rule="nonzero"/></g></svg></div>
+    </div>
+    <h1>Equilibrium #3429</h1>
+    <p>  Our Equilibrium collection promotes balance and calm.</p>
+    <div class="time">
+      <div class="one">
+        <svg width="11" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 10.216 5.5 18 0 10.216l5.5 3.263 5.5-3.262ZM5.5 0l5.496 9.169L5.5 12.43 0 9.17 5.5 0Z" fill="#00FFF8"/></svg>
+        <p>0.041 ETH</p>
+      </div>
+      <div class="two">
+        <svg width="17" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M8.305 2.007a6.667 6.667 0 1 0 0 13.334 6.667 6.667 0 0 0 0-13.334Zm2.667 7.334H8.305a.667.667 0 0 1-.667-.667V6.007a.667.667 0 0 1 1.334 0v2h2a.667.667 0 0 1 0 1.334Z" fill="#8BACD9"/></svg>
+        <p>3 days left</p>
+      </div>
+    </div>
+    <hr>
+    <div class="footer">
+      <img src="./images/image-avatar.png" alt="">
+      <p>Creation of<span>Jules Wyvern</span></p>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.facebook.com/Maro.Al.Kades/">Maro Al-kades</a>.
+  </div>
+</body>
+</html>
